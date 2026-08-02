@@ -1,0 +1,8 @@
+id,instrumentId,exchange,instrumentName,type,quantity,price,fees,currency,tradeDate,fxRateToBase,fxRateFlagged,note
+sample-1,ASX:BHP,ASX,BHP Group Ltd,BUY,100,40.00,10,AUD,2024-01-01,1,false,
+sample-2,ASX:BHP,ASX,BHP Group Ltd,BUY,50,42.00,5,AUD,2024-02-01,1,false,
+sample-3,ASX:BHP,ASX,BHP Group Ltd,SELL,60,45.00,8,AUD,2024-03-01,1,false,
+sample-4,NASDAQ:AAPL,NASDAQ,Apple Inc.,BUY,10,150.00,5,USD,2024-01-10,1.5,false,
+sample-5,NASDAQ:AAPL,NASDAQ,Apple Inc.,SELL,4,160.00,2,USD,2024-02-10,1.5,false,
+sample-6,NASDAQ:AAPL,NASDAQ,Apple Inc.,DIVIDEND,0,12.00,0,USD,2024-03-10,1.5,false,quarterly dividend
+sample-7,SGX:D05,SGX,DBS Group Holdings Ltd,BUY,200,30.00,10,SGD,2024-01-15,1.1,false,

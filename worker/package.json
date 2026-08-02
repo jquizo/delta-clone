@@ -1,0 +1,22 @@
+{
+  "name": "delta-clone-worker",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "vitest run",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260712.1",
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.7.0",
+    "globals": "^17.7.0",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.64.0",
+    "vitest": "^4.1.10",
+    "wrangler": "^4.110.0"
+  }
+}
