@@ -24,9 +24,9 @@ export function PortfolioValueChart({ snapshots, baseCurrency }: PortfolioValueC
   const filtered = cutoff ? snapshots.filter((s) => s.date >= cutoff) : snapshots;
 
   return (
-    <div className="mb-6 rounded border p-4">
+    <div className="mb-6 rounded-xl border border-hairline bg-white p-4 shadow-sm">
       <div className="mb-2 flex items-center justify-between">
-        <h2 className="text-sm font-medium">Portfolio value</h2>
+        <h2 className="text-sm font-medium text-ink">Portfolio value</h2>
         <div className="flex gap-1 text-xs">
           {RANGE_OPTIONS.map((r) => (
             <button
@@ -34,7 +34,7 @@ export function PortfolioValueChart({ snapshots, baseCurrency }: PortfolioValueC
               type="button"
               onClick={() => setRange(r)}
               aria-pressed={range === r}
-              className={`rounded px-2 py-1 ${range === r ? 'bg-blue-600 text-white' : 'bg-gray-100'}`}
+              className={`rounded-full px-3 py-2 ${range === r ? 'bg-accent text-white' : 'bg-paper text-muted hover:text-ink'}`}
             >
               {r}
             </button>
@@ -43,7 +43,7 @@ export function PortfolioValueChart({ snapshots, baseCurrency }: PortfolioValueC
       </div>
 
       {snapshots.length === 0 ? (
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-muted">
           No history yet — a snapshot is recorded once per day you open the app, so your value chart builds up from
           today onward.
         </p>
@@ -53,7 +53,7 @@ export function PortfolioValueChart({ snapshots, baseCurrency }: PortfolioValueC
             <XAxis dataKey="date" tick={{ fontSize: 10 }} />
             <YAxis tick={{ fontSize: 10 }} width={50} />
             <Tooltip formatter={(value) => formatMoney(Number(value), baseCurrency)} />
-            <Area type="monotone" dataKey="valueInBase" stroke="#2563eb" fill="rgba(37,99,235,0.2)" />
+            <Area type="monotone" dataKey="valueInBase" stroke="#3d5a80" fill="rgba(61,90,128,0.15)" />
           </AreaChart>
         </ResponsiveContainer>
       )}

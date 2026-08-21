@@ -86,7 +86,7 @@ export function SettingsPage({ portfolio, onPortfolioUpdated }: SettingsPageProp
         <button
           type="button"
           onClick={handleExport}
-          className="rounded-md border border-hairline bg-paper px-3 py-1 text-sm text-ink hover:bg-hairline"
+          className="rounded-md border border-hairline bg-paper px-3 py-2 text-sm text-ink hover:bg-hairline"
         >
           Export all transactions (CSV)
         </button>
@@ -110,7 +110,7 @@ export function SettingsPage({ portfolio, onPortfolioUpdated }: SettingsPageProp
           type="button"
           onClick={handleWipe}
           disabled={confirmText !== CONFIRM_PHRASE || wiping}
-          className="rounded-md bg-negative px-3 py-1 text-sm text-white disabled:opacity-50"
+          className="rounded-md bg-negative px-3 py-2 text-sm text-white disabled:opacity-50"
         >
           Wipe all data
         </button>

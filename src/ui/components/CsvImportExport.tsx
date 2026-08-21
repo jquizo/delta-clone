@@ -98,7 +98,7 @@ export function CsvImportExport({ portfolio, onImported }: CsvImportExportProps)
       <button
         type="button"
         onClick={handleExport}
-        className="mb-4 rounded-md border border-hairline bg-paper px-3 py-1.5 text-sm text-ink hover:bg-hairline"
+        className="mb-4 rounded-md border border-hairline bg-paper px-3 py-2 text-sm text-ink hover:bg-hairline"
       >
         Export CSV
       </button>
@@ -140,7 +140,7 @@ export function CsvImportExport({ portfolio, onImported }: CsvImportExportProps)
           <button
             type="button"
             onClick={handlePreview}
-            className="mt-3 rounded-md bg-accent px-3 py-1.5 text-sm font-medium text-white hover:bg-accent/90"
+            className="mt-3 rounded-md bg-accent px-3 py-2 text-sm font-medium text-white hover:bg-accent/90"
           >
             Preview import
           </button>
@@ -172,7 +172,7 @@ export function CsvImportExport({ portfolio, onImported }: CsvImportExportProps)
             type="button"
             onClick={handleConfirm}
             disabled={okCount === 0}
-            className="rounded-md bg-positive px-3 py-1.5 text-sm font-medium text-white hover:bg-positive/90 disabled:opacity-50"
+            className="rounded-md bg-positive px-3 py-2 text-sm font-medium text-white hover:bg-positive/90 disabled:opacity-50"
           >
             Confirm import ({okCount})
           </button>

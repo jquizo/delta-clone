@@ -116,8 +116,8 @@ export function Dashboard({ portfolio }: DashboardProps) {
             <PortfolioValueChart snapshots={snapshots} baseCurrency={portfolio.baseCurrency} />
           </Suspense>
 
-          <div className="overflow-hidden rounded-xl border border-hairline bg-white shadow-sm">
-            <table className="w-full border-collapse text-sm">
+          <div className="overflow-x-auto rounded-xl border border-hairline bg-white shadow-sm">
+            <table className="w-full min-w-[640px] border-collapse text-sm">
               <thead>
                 <tr className="border-b border-hairline bg-paper text-left text-xs uppercase tracking-wide text-muted">
                   <th className="px-4 py-2.5 font-medium">Instrument</th>

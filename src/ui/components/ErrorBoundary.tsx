@@ -31,9 +31,13 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
 
     return (
       <div role="alert" className="mx-auto max-w-3xl p-6">
-        <h1 className="mb-2 text-lg font-semibold text-red-700">{this.props.fallbackTitle ?? 'Something went wrong'}</h1>
-        <p className="mb-4 text-sm text-gray-600">{error.message}</p>
-        <button type="button" onClick={this.handleReset} className="rounded bg-gray-100 px-3 py-1 text-sm">
+        <h1 className="mb-2 text-lg font-semibold text-negative">{this.props.fallbackTitle ?? 'Something went wrong'}</h1>
+        <p className="mb-4 text-sm text-muted">{error.message}</p>
+        <button
+          type="button"
+          onClick={this.handleReset}
+          className="rounded-md border border-hairline bg-paper px-3 py-2 text-sm text-ink hover:bg-hairline"
+        >
           Try again
         </button>
       </div>

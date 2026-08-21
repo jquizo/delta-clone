@@ -11,11 +11,12 @@ export function MarketStatusBadge({ exchange, now = new Date() }: MarketStatusBa
 
   return (
     <span
+      aria-label={`${exchange} market ${open ? 'open' : 'closed'}`}
       className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs ${
         open ? 'bg-positive-soft text-positive' : 'bg-hairline text-muted'
       }`}
     >
-      {exchange} {open ? 'OPEN' : 'CLOSED'}
+      {exchange}
     </span>
   );
 }

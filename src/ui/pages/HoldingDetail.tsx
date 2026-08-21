@@ -29,7 +29,7 @@ export function HoldingDetail({ instrumentId, onBack }: HoldingDetailProps) {
             type="button"
             onClick={() => setRange(r)}
             aria-pressed={range === r}
-            className={`rounded-full px-3 py-1 text-sm ${range === r ? 'bg-accent text-white' : 'bg-paper text-muted hover:text-ink'}`}
+            className={`rounded-full px-3 py-2 text-sm ${range === r ? 'bg-accent text-white' : 'bg-paper text-muted hover:text-ink'}`}
           >
             {r}
           </button>

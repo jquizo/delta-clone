@@ -28,15 +28,17 @@ export function AppRoot() {
     return <p className="p-6 text-sm text-muted">Loading…</p>;
   }
 
+  // py-3 (not just pb-3) plus the text line height brings the tap target to
+  // ~44px tall, the recommended minimum touch target size.
   const navItemClass = (view: typeof activeView) =>
-    `border-b-2 pb-3 text-sm font-medium transition-colors ${
+    `flex items-center border-b-2 px-1 py-3 text-sm font-medium transition-colors ${
       activeView === view ? 'border-accent text-ink' : 'border-transparent text-muted hover:text-ink'
     }`;
 
   return (
     <div className="min-h-screen bg-paper">
       <Toaster />
-      <nav className="flex gap-6 border-b border-hairline-strong bg-paper px-5 pt-3">
+      <nav className="flex gap-6 border-b border-hairline-strong bg-paper px-5">
         <button type="button" onClick={() => setActiveView('dashboard')} aria-current={activeView === 'dashboard'} className={navItemClass('dashboard')}>
           Dashboard
         </button>
