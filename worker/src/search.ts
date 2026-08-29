@@ -1,4 +1,4 @@
-export type Exchange = 'ASX' | 'NASDAQ' | 'NYSE' | 'ARCA' | 'LSE' | 'SGX' | 'OTC';
+export type Exchange = 'ASX' | 'NASDAQ' | 'NYSE' | 'ARCA' | 'LSE' | 'SGX' | 'OTC' | 'SBF' | 'OSE';
 
 export interface InstrumentSearchResult {
   id: string;
@@ -18,6 +18,8 @@ const YAHOO_EXCHANGE_TO_EXCHANGE: Record<string, Exchange> = {
   LSE: 'LSE',
   SES: 'SGX',
   PNK: 'OTC',
+  PAR: 'SBF',
+  OSL: 'OSE',
 };
 
 const EXCHANGE_CURRENCY: Record<Exchange, string> = {
@@ -28,6 +30,8 @@ const EXCHANGE_CURRENCY: Record<Exchange, string> = {
   LSE: 'GBP',
   SGX: 'SGD',
   OTC: 'USD',
+  SBF: 'EUR',
+  OSE: 'NOK',
 };
 
 const EXCHANGE_SUFFIX: Record<Exchange, string> = {
@@ -38,6 +42,8 @@ const EXCHANGE_SUFFIX: Record<Exchange, string> = {
   LSE: '.L',
   SGX: '.SI',
   OTC: '',
+  SBF: '.PA',
+  OSE: '.OL',
 };
 
 function stripSuffix(symbol: string, suffix: string): string {

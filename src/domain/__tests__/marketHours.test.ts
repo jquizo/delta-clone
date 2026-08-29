@@ -130,4 +130,40 @@ describe('isMarketOpen', () => {
       expect(isMarketOpen('SGX', new Date(Date.UTC(2026, 6, 7, 16, 0)))).toBe(false);
     });
   });
+
+  describe('SBF / Euronext Paris (09:00–17:30 Paris)', () => {
+    test('is open at the 09:00 open in winter (CET, UTC+1)', () => {
+      expect(isMarketOpen('SBF', new Date(Date.UTC(2026, 0, 14, 8, 0)))).toBe(true);
+    });
+
+    test('is open at the 09:00 open in summer (CEST, UTC+2) — same wall clock, different offset', () => {
+      expect(isMarketOpen('SBF', new Date(Date.UTC(2026, 6, 8, 7, 0)))).toBe(true);
+    });
+
+    test('is closed at 17:30 close (exclusive)', () => {
+      expect(isMarketOpen('SBF', new Date(Date.UTC(2026, 0, 14, 16, 30)))).toBe(false);
+    });
+
+    test('is closed on a Saturday even during normal session hours', () => {
+      expect(isMarketOpen('SBF', new Date(Date.UTC(2026, 0, 17, 8, 0)))).toBe(false);
+    });
+  });
+
+  describe('OSE / Oslo Børs (09:00–16:20 Oslo)', () => {
+    test('is open at the 09:00 open in winter (CET, UTC+1)', () => {
+      expect(isMarketOpen('OSE', new Date(Date.UTC(2026, 0, 14, 8, 0)))).toBe(true);
+    });
+
+    test('is open at the 09:00 open in summer (CEST, UTC+2) — same wall clock, different offset', () => {
+      expect(isMarketOpen('OSE', new Date(Date.UTC(2026, 6, 8, 7, 0)))).toBe(true);
+    });
+
+    test('is closed at 16:20 close (exclusive)', () => {
+      expect(isMarketOpen('OSE', new Date(Date.UTC(2026, 0, 14, 15, 20)))).toBe(false);
+    });
+
+    test('is closed on a Saturday even during normal session hours', () => {
+      expect(isMarketOpen('OSE', new Date(Date.UTC(2026, 0, 17, 8, 0)))).toBe(false);
+    });
+  });
 });

@@ -96,7 +96,25 @@ describe('toInstrumentSearchResults', () => {
     ]);
   });
 
-  test('excludes quotes on exchanges outside ASX/NASDAQ/NYSE/ARCA/LSE/SGX/OTC', () => {
+  test('maps a Euronext Paris equity quote via the PAR exchange code, stripping the .PA suffix', () => {
+    const json = {
+      quotes: [{ exchange: 'PAR', symbol: 'VK.PA', longname: 'Vallourec S.A.', quoteType: 'EQUITY' }],
+    };
+    expect(toInstrumentSearchResults(json)).toEqual([
+      { id: 'SBF:VK', name: 'Vallourec S.A.', exchange: 'SBF', currency: 'EUR' },
+    ]);
+  });
+
+  test('maps an Oslo Børs equity quote via the OSL exchange code, stripping the .OL suffix', () => {
+    const json = {
+      quotes: [{ exchange: 'OSL', symbol: 'PGS.OL', longname: 'PGS ASA', quoteType: 'EQUITY' }],
+    };
+    expect(toInstrumentSearchResults(json)).toEqual([
+      { id: 'OSE:PGS', name: 'PGS ASA', exchange: 'OSE', currency: 'NOK' },
+    ]);
+  });
+
+  test('excludes quotes on exchanges outside ASX/NASDAQ/NYSE/ARCA/LSE/SGX/OTC/SBF/OSE', () => {
     const json = {
       quotes: [{ exchange: 'STU', symbol: 'BHP.SG', longname: 'BHP Group (ADRs)', quoteType: 'EQUITY' }],
     };

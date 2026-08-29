@@ -8,6 +8,8 @@ const EXCHANGE_TIMEZONE: Record<Exchange, string> = {
   LSE: 'Europe/London',
   SGX: 'Asia/Singapore',
   OTC: 'America/New_York',
+  SBF: 'Europe/Paris',
+  OSE: 'Europe/Oslo',
 };
 
 interface Session {
@@ -23,6 +25,8 @@ const EXCHANGE_SESSION: Record<Exchange, Session> = {
   LSE: { openMinutes: 8 * 60, closeMinutes: 16 * 60 + 30 },
   SGX: { openMinutes: 9 * 60, closeMinutes: 17 * 60 },
   OTC: { openMinutes: 9 * 60 + 30, closeMinutes: 16 * 60 },
+  SBF: { openMinutes: 9 * 60, closeMinutes: 17 * 60 + 30 },
+  OSE: { openMinutes: 9 * 60, closeMinutes: 16 * 60 + 20 },
 };
 
 const WEEKDAY_INDEX: Record<string, number> = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };

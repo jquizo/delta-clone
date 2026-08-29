@@ -1,5 +1,5 @@
 export type Currency = 'AUD' | 'USD' | 'GBP' | 'SGD' | string;
-export type Exchange = 'ASX' | 'NASDAQ' | 'NYSE' | 'ARCA' | 'LSE' | 'SGX' | 'OTC';
+export type Exchange = 'ASX' | 'NASDAQ' | 'NYSE' | 'ARCA' | 'LSE' | 'SGX' | 'OTC' | 'SBF' | 'OSE';
 
 /**
  * Instrument.id is provider-neutral ('ASX:BHP'), never the raw Yahoo

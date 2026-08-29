@@ -11,6 +11,8 @@ const EXCHANGE_SUFFIX: Record<Exchange, string> = {
   NYSE: '',
   ARCA: '',
   OTC: '',
+  SBF: '.PA',
+  OSE: '.OL',
 };
 
 const HISTORY_RANGE_TO_YAHOO_RANGE: Record<HistoryRange, string> = {

@@ -31,6 +31,14 @@ describe('toYahooSymbol', () => {
     expect(toYahooSymbol('OTC:BHPLF')).toBe('BHPLF');
   });
 
+  test('maps SBF (Euronext Paris) ids to the .PA suffix', () => {
+    expect(toYahooSymbol('SBF:VK')).toBe('VK.PA');
+  });
+
+  test('maps OSE (Oslo Børs) ids to the .OL suffix', () => {
+    expect(toYahooSymbol('OSE:PGS')).toBe('PGS.OL');
+  });
+
   test('throws for an unrecognised exchange prefix', () => {
     expect(() => toYahooSymbol('TSX:SHOP')).toThrow(/Unknown exchange/);
   });

@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const ExchangeSchema = z.enum(['ASX', 'NASDAQ', 'NYSE', 'ARCA', 'LSE', 'SGX', 'OTC']);
+export const ExchangeSchema = z.enum(['ASX', 'NASDAQ', 'NYSE', 'ARCA', 'LSE', 'SGX', 'OTC', 'SBF', 'OSE']);
 
 export const InstrumentSchema = z.object({
   id: z.string().min(1),

@@ -5,11 +5,11 @@ import { useToastStore } from '../../app/toastStore';
 import { SymbolSearch } from './SymbolSearch';
 import type { Exchange, Instrument, Portfolio, Transaction } from '../../domain/types';
 
-const EXCHANGES: Exchange[] = ['ASX', 'NASDAQ', 'NYSE', 'ARCA', 'LSE', 'SGX', 'OTC'];
+const EXCHANGES: Exchange[] = ['ASX', 'NASDAQ', 'NYSE', 'ARCA', 'LSE', 'SGX', 'OTC', 'SBF', 'OSE'];
 
 const LABEL_CLASS = 'mb-1 block text-xs font-medium uppercase tracking-wide text-muted';
 const INPUT_CLASS =
-  'w-full rounded-md border border-hairline bg-white px-2.5 py-1.5 text-sm text-ink focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30';
+  'w-full rounded-md border border-hairline bg-surface px-2.5 py-1.5 text-sm text-ink focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30';
 
 interface TransactionFormProps {
   portfolio: Portfolio;
@@ -101,7 +101,7 @@ export function TransactionForm({ portfolio, instruments, editing, onSaved, onCa
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mb-6 space-y-3 rounded-xl border border-hairline bg-white p-4 shadow-sm">
+    <form onSubmit={handleSubmit} className="mb-6 space-y-3 rounded-xl border border-hairline bg-surface p-4 shadow-sm">
       {error && (
         <p role="alert" className="text-sm text-negative">
           {error}
