@@ -62,7 +62,7 @@ export function SettingsPage({ portfolio, onPortfolioUpdated }: SettingsPageProp
     <main className="mx-auto max-w-3xl p-6">
       <h1 className="mb-4 text-xl font-semibold text-ink">Settings</h1>
 
-      <section className="mb-6 rounded-xl border border-hairline bg-white p-4 shadow-sm">
+      <section className="mb-6 rounded-xl border border-hairline bg-surface p-4 shadow-sm">
         <h2 className="mb-2 text-sm font-medium text-ink">Base currency</h2>
         <label htmlFor="base-currency" className="block text-sm text-muted">
           Portfolio base currency
@@ -71,7 +71,7 @@ export function SettingsPage({ portfolio, onPortfolioUpdated }: SettingsPageProp
           id="base-currency"
           value={portfolio.baseCurrency}
           onChange={handleBaseCurrencyChange}
-          className="mt-1 rounded-md border border-hairline bg-white px-2 py-1 text-sm text-ink"
+          className="mt-1 rounded-md border border-hairline bg-surface px-2 py-1 text-sm text-ink"
         >
           {SUPPORTED_CURRENCIES.map((c) => (
             <option key={c} value={c}>
@@ -81,7 +81,7 @@ export function SettingsPage({ portfolio, onPortfolioUpdated }: SettingsPageProp
         </select>
       </section>
 
-      <section className="mb-6 rounded-xl border border-hairline bg-white p-4 shadow-sm">
+      <section className="mb-6 rounded-xl border border-hairline bg-surface p-4 shadow-sm">
         <h2 className="mb-2 text-sm font-medium text-ink">Export</h2>
         <button
           type="button"
@@ -92,7 +92,7 @@ export function SettingsPage({ portfolio, onPortfolioUpdated }: SettingsPageProp
         </button>
       </section>
 
-      <section className="rounded-xl border border-negative/30 bg-white p-4 shadow-sm">
+      <section className="rounded-xl border border-negative/30 bg-surface p-4 shadow-sm">
         <h2 className="mb-2 text-sm font-medium text-negative">Danger zone</h2>
         <p className="mb-2 text-sm text-muted">
           Permanently erases every portfolio, transaction, and cached price on this device. This cannot be undone.
@@ -104,7 +104,7 @@ export function SettingsPage({ portfolio, onPortfolioUpdated }: SettingsPageProp
           id="wipe-confirm"
           value={confirmText}
           onChange={(e) => setConfirmText(e.target.value)}
-          className="mb-2 mt-1 block rounded-md border border-hairline px-2 py-1 text-sm"
+          className="mb-2 mt-1 block rounded-md border border-hairline bg-surface px-2 py-1 text-sm text-ink"
         />
         <button
           type="button"

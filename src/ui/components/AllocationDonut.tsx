@@ -20,7 +20,7 @@ export function AllocationDonut({ holdings, quotes, fxRates, baseCurrency }: All
   const slices = groupAllocation(holdings, quotes, fxRates, baseCurrency, groupBy);
 
   return (
-    <div className="mb-6 rounded-xl border border-hairline bg-white p-4 shadow-sm">
+    <div className="mb-6 rounded-xl border border-hairline bg-surface p-4 shadow-sm">
       <div className="mb-2 flex items-center justify-between">
         <h2 className="text-sm font-medium text-ink">Allocation</h2>
         <div className="flex gap-1 text-xs">

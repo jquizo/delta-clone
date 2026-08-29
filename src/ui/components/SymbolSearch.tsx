@@ -83,13 +83,13 @@ export function SymbolSearch({ id, value, onChange, onSelect }: SymbolSearchProp
         onFocus={() => setDismissed(false)}
         placeholder="Search symbol, e.g. BHP"
         autoComplete="off"
-        className="w-full rounded-md border border-hairline bg-white px-2.5 py-1.5 text-sm text-ink focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+        className="w-full rounded-md border border-hairline bg-surface px-2.5 py-1.5 text-sm text-ink focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
       />
       {isOpen && (
         <ul
           id={listboxId}
           role="listbox"
-          className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md border border-hairline bg-white text-sm shadow-md"
+          className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md border border-hairline bg-surface text-sm shadow-md"
         >
           {results.map((r, i) => (
             <li

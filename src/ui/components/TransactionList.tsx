@@ -27,7 +27,7 @@ export function TransactionList({ transactions, instruments, onEdit }: Transacti
   }
 
   return (
-    <div className="overflow-x-auto rounded-xl border border-hairline bg-white shadow-sm">
+    <div className="overflow-x-auto rounded-xl border border-hairline bg-surface shadow-sm">
       <table className="w-full min-w-[560px] border-collapse text-sm">
         <thead>
           <tr className="border-b border-hairline bg-paper text-left text-xs uppercase tracking-wide text-muted">

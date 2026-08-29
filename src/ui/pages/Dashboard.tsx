@@ -63,7 +63,7 @@ export function Dashboard({ portfolio }: DashboardProps) {
           <select
             value={displayCurrency}
             onChange={(e) => setDisplayCurrency(e.target.value as Currency)}
-            className="rounded-md border border-hairline bg-white px-2 py-1 text-sm text-ink"
+            className="rounded-md border border-hairline bg-surface px-2 py-1 text-sm text-ink"
           >
             {SUPPORTED_CURRENCIES.map((c) => (
               <option key={c} value={c}>
@@ -116,7 +116,7 @@ export function Dashboard({ portfolio }: DashboardProps) {
             <PortfolioValueChart snapshots={snapshots} baseCurrency={portfolio.baseCurrency} />
           </Suspense>
 
-          <div className="overflow-x-auto rounded-xl border border-hairline bg-white shadow-sm">
+          <div className="overflow-x-auto rounded-xl border border-hairline bg-surface shadow-sm">
             <table className="w-full min-w-[640px] border-collapse text-sm">
               <thead>
                 <tr className="border-b border-hairline bg-paper text-left text-xs uppercase tracking-wide text-muted">

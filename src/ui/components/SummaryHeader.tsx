@@ -44,7 +44,7 @@ export function SummaryHeader({ summary, displayCurrency }: SummaryHeaderProps) 
       role="status"
       aria-live="polite"
       aria-label="Portfolio summary"
-      className="mb-6 grid grid-cols-2 gap-y-3 rounded-xl border border-hairline bg-white p-4 shadow-sm sm:grid-cols-4 sm:gap-y-0"
+      className="mb-6 grid grid-cols-2 gap-y-3 rounded-xl border border-hairline bg-surface p-4 shadow-sm sm:grid-cols-4 sm:gap-y-0"
     >
       <Stat label="Total value" value={summary.totalValue} currency={displayCurrency} />
       <Stat label="Total cost" value={summary.totalCost} currency={displayCurrency} />

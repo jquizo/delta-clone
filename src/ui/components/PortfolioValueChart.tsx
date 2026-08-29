@@ -24,7 +24,7 @@ export function PortfolioValueChart({ snapshots, baseCurrency }: PortfolioValueC
   const filtered = cutoff ? snapshots.filter((s) => s.date >= cutoff) : snapshots;
 
   return (
-    <div className="mb-6 rounded-xl border border-hairline bg-white p-4 shadow-sm">
+    <div className="mb-6 rounded-xl border border-hairline bg-surface p-4 shadow-sm">
       <div className="mb-2 flex items-center justify-between">
         <h2 className="text-sm font-medium text-ink">Portfolio value</h2>
         <div className="flex gap-1 text-xs">

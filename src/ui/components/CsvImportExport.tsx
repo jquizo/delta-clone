@@ -92,7 +92,7 @@ export function CsvImportExport({ portfolio, onImported }: CsvImportExportProps)
   const errorCount = dryRun?.filter((r) => r.status === 'error').length ?? 0;
 
   return (
-    <div className="mb-6 rounded-xl border border-hairline bg-white p-4 shadow-sm">
+    <div className="mb-6 rounded-xl border border-hairline bg-surface p-4 shadow-sm">
       <h2 className="mb-3 text-sm font-medium text-ink">CSV import / export</h2>
 
       <button
@@ -107,7 +107,13 @@ export function CsvImportExport({ portfolio, onImported }: CsvImportExportProps)
         <label htmlFor="csv-file" className="mb-1 block text-xs font-medium uppercase tracking-wide text-muted">
           Import CSV
         </label>
-        <input id="csv-file" type="file" accept=".csv,text/csv" onChange={handleFileSelected} className="block text-sm text-ink" />
+        <input
+          id="csv-file"
+          type="file"
+          accept=".csv,text/csv"
+          onChange={handleFileSelected}
+          className="block w-full text-sm text-muted file:mr-3 file:cursor-pointer file:rounded-md file:border file:border-hairline file:bg-paper file:px-3 file:py-2 file:text-sm file:font-medium file:text-ink hover:file:bg-hairline"
+        />
       </div>
 
       {headers.length > 0 && (
@@ -125,7 +131,7 @@ export function CsvImportExport({ portfolio, onImported }: CsvImportExportProps)
                   onChange={(e) =>
                     setMapping((m) => ({ ...m, [field]: e.target.value === '' ? undefined : Number(e.target.value) }))
                   }
-                  className="w-full rounded-md border border-hairline bg-white px-2 py-1 text-sm text-ink"
+                  className="w-full rounded-md border border-hairline bg-surface px-2 py-1 text-sm text-ink"
                 >
                   <option value="">— not mapped —</option>
                   {headers.map((h, i) => (

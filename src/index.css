@@ -1,7 +1,10 @@
 @import 'tailwindcss';
 
+/* Light palette (default). Dark overrides below layer on top of this,
+   guarded so an explicit [data-theme] always wins over the OS preference. */
 @theme {
   --color-paper: #fafaf8;
+  --color-surface: #ffffff;
   --color-ink: #2b2b28;
   /* #6b665a — darkened from the original #8a8578, which measured ~3.5:1 on
      white/paper and failed WCAG AA (4.5:1) at the small sizes it's used at
@@ -19,7 +22,43 @@
   --color-negative-soft: #fbeaea;
 }
 
+/* OS preference — applies only while no explicit choice has been made.
+   `:root[data-theme="light"]` in the block below always wins over this. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --color-paper: #1a1916;
+    --color-surface: #252420;
+    --color-ink: #edeae2;
+    --color-muted: #a39d8f;
+    --color-hairline: #383630;
+    --color-hairline-strong: #423f38;
+    --color-accent: #7a9ed6;
+    --color-positive: #6ec496;
+    --color-positive-soft: #1d3327;
+    --color-negative: #e37a71;
+    --color-negative-soft: #351d1b;
+  }
+}
+
+/* Explicit user choice — set via the theme toggle, persisted in
+   localStorage, and applied as data-theme on <html>. Wins in both
+   directions regardless of OS preference. */
+:root[data-theme='dark'] {
+  --color-paper: #1a1916;
+  --color-surface: #252420;
+  --color-ink: #edeae2;
+  --color-muted: #a39d8f;
+  --color-hairline: #383630;
+  --color-hairline-strong: #423f38;
+  --color-accent: #7a9ed6;
+  --color-positive: #6ec496;
+  --color-positive-soft: #1d3327;
+  --color-negative: #e37a71;
+  --color-negative-soft: #351d1b;
+}
+
 body {
   background-color: var(--color-paper);
   color: var(--color-ink);
+  transition: background-color 0.15s ease, color 0.15s ease;
 }

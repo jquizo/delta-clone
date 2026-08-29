@@ -7,6 +7,7 @@ import { SettingsPage } from './pages/Settings';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { Toaster } from './components/Toaster';
 import { ChartSkeleton } from './components/Skeleton';
+import { ThemeToggle } from './components/ThemeToggle';
 
 // Lazy-loaded: pulls in lightweight-charts, which most sessions never need
 // (only visited by clicking into a specific holding), so it shouldn't sit in
@@ -19,10 +20,23 @@ export function AppRoot() {
   const activeView = useAppStore((s) => s.activeView);
   const setActiveView = useAppStore((s) => s.setActiveView);
   const selectedInstrumentId = useAppStore((s) => s.selectedInstrumentId);
+  const theme = useAppStore((s) => s.theme);
 
   useEffect(() => {
     ensureDefaultPortfolio().then(setActivePortfolio);
   }, [setActivePortfolio]);
+
+  // Reflects the explicit choice onto <html data-theme>, which index.css's
+  // `:root[data-theme]` rules key off. When theme is null (no explicit
+  // choice made yet), the attribute is removed and the OS preference media
+  // query in index.css takes over on its own.
+  useEffect(() => {
+    if (theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+    }
+  }, [theme]);
 
   if (!activePortfolio) {
     return <p className="p-6 text-sm text-muted">Loading…</p>;
@@ -48,6 +62,9 @@ export function AppRoot() {
         <button type="button" onClick={() => setActiveView('settings')} aria-current={activeView === 'settings'} className={navItemClass('settings')}>
           Settings
         </button>
+        <div className="ml-auto flex items-center">
+          <ThemeToggle />
+        </div>
       </nav>
       {activeView === 'transactions' && (
         <ErrorBoundary fallbackTitle="The transactions page hit a problem">
